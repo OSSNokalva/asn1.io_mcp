@@ -32,7 +32,7 @@ Add the following to your `cline_mcp_settings.json` (or the equivalent configura
 
 ## **Available Tools**
 
-The server exposes the following tool to connected LLMs:
+The server exposes the following tools to connected LLMs:
 
 ### **`compile_asn1_schema`**
 
@@ -45,6 +45,15 @@ Compiles ASN.1 schema definitions into executable source code. Use this tool whe
 * `codec` (string, optional): The ASN.1 encoding rules to support (e.g., `uper`, `per`, `der`, `ber`, `oer`). Defaults to `der`.  
 * `fileName` (string, optional): The name of the schema file (e.g., `schema.asn`). Used for precise error referencing.  
 * `userId` (string, optional): Email address to link the compilation to an asn1.io user account.
+
+### **`validate_asn1_schema`**
+
+Validates ASN.1 schema definitions syntax and semantics without generating source code. Use this tool whenever a user asks to validate, check, or verify an ASN.1 schema.
+
+**Arguments:**
+
+* `schemaContent` (string, required): Plain-text ASN.1 schema definition to validate.
+* `fileName` (string, optional): The name of the schema file (e.g., `schema.asn`). Defaults to `schema.asn`. Used for errors to reference a specific location in the schema.
 
 ## **Usage Example**
 
