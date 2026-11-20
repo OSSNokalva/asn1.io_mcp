@@ -55,6 +55,34 @@ Validates ASN.1 schema definitions syntax and semantics without generating sourc
 * `schemaContent` (string, required): Plain-text ASN.1 schema definition to validate.
 * `fileName` (string, optional): The name of the schema file (e.g., `schema.asn`). Defaults to `schema.asn`. Used for errors to reference a specific location in the schema.
 
+### **`decode_asn1_data`**
+
+Decodes hex or base64 encoded ASN.1 binary data into a decoded ASN.1 value string according to the provided schema definition, ASN.1 type name, and encoding rule (DER by default).
+
+**Arguments:**
+
+* `schemaContent` (string, required): Plain-text ASN.1 schema definition.
+* `typeName` (string, required): The ASN.1 type name (PDU) to decode into (e.g., `Rocket`).
+* `data` (string, required): Hex or base64 encoded binary data string to decode.
+* `fileName` (string, optional): The name of the schema file (e.g., `schema.asn`). Defaults to `schema.asn`.
+* `codec` (string, optional): The ASN.1 encoding rule (e.g., `DER`, `BER`, `PER`, `UPER`, `CUPER`, `OER`, `COER`, `JER`, `XML`, `XER`, `EXER`). Defaults to `DER`.
+* `dataFormat` (string, optional): Format of the input encoded data string (`hex` or `base64`). Defaults to `hex`.
+* `userId` (string, optional): Email address to link the request to an asn1.io user account.
+
+### **`encode_asn1_data`**
+
+Encodes an ASN.1 value string into hex or base64 encoded binary data according to the provided schema definition, ASN.1 type name, and encoding rule (DER by default).
+
+**Arguments:**
+
+* `schemaContent` (string, required): Plain-text ASN.1 schema definition.
+* `typeName` (string, required): The ASN.1 type name (PDU) to encode (e.g., `Rocket`).
+* `value` (string, required): The ASN.1 value string to be encoded (e.g., in ASN.1 value notation).
+* `fileName` (string, optional): The name of the schema file (e.g., `schema.asn`). Defaults to `schema.asn`.
+* `codec` (string, optional): The ASN.1 encoding rule to use for encoding (e.g., `DER`, `BER`, `PER`, `UPER`, `CUPER`, `OER`, `COER`, `JER`, `XML`, `XER`, `EXER`). Defaults to `DER`.
+* `dataFormat` (string, optional): Desired format of the output encoded data (`hex` or `base64`). Defaults to `hex`.
+* `userId` (string, optional): Email address to link the request to an asn1.io user account.
+
 ## **Usage Example**
 
 Once connected, simply ask your AI agent:
